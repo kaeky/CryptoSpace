@@ -14,4 +14,8 @@ export class AppComponent {
   getAllRates(): any {
     this.exchangesService.getRates(1000, 'BTC-USD', 'ETH-USD').subscribe(console.log);
   }
+
+  unsubscribe(): any {
+    this.exchangesService.unsubscribe();
+  }
 }
