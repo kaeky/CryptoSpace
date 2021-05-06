@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExchangeRatesService} from "./core/services/exchange-rates.service";
+import { ExchangesService } from './core/services/exchanges/exchanges.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,10 @@ export class AppComponent {
   title = 'CriptoSpace';
 
   constructor(
-    private exchangeratesService: ExchangeRatesService
-  ) { }
+    private exchangesService: ExchangesService
+  ) {}
 
   getAllRates(): any {
-    this.exchangeratesService.getRates().subscribe(rates => {
-      console.log(rates);
-    });
+    this.exchangesService.getRates('BTC-USD', 'ETH-USD');
   }
 }
