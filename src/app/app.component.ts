@@ -9,11 +9,13 @@ import { ExchangesService } from './core/services/exchanges/exchanges.service';
 export class AppComponent {
   title = 'CriptoSpace';
 
-  constructor(
-    private exchangesService: ExchangesService
-  ) {}
+  constructor(private exchangesService: ExchangesService) {}
 
   getAllRates(): any {
-    this.exchangesService.getRates('BTC-USD', 'ETH-USD');
+    this.exchangesService.getRates(1000, 'BTC-USD', 'ETH-USD').subscribe(console.log);
+  }
+
+  unsubscribe(): any {
+    this.exchangesService.unsubscribe();
   }
 }
