@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {
   Chart,
   Legend,
@@ -72,10 +72,5 @@ export class ChartComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
   }
-
-
-
-
 }
